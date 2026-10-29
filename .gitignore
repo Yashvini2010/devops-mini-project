@@ -6,3 +6,4 @@ __pycache__/
 *.tfstate.backup
 .env
 jenkins-kubeconfig.yaml
+terraform/devops-mini-config
