@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: incident-monitor
+  labels:
+    app: incident-monitor
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: incident-monitor
+  template:
+    metadata:
+      labels:
+        app: incident-monitor
+    spec:
+      containers:
+        - name: incident-monitor
+          image: yashvini2010/incident-monitor:1.0
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MOCK_MODE
+              value: "true"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
