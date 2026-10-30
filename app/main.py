@@ -19,7 +19,7 @@ def summarize():
 @app.route('/health')
 def health():
     REQUESTS.labels('/health').inc()
-    return jsonify(status='ok')
+    return jsonify(status='ok', version='2')
 
 
 @app.route('/incidents/summary')
