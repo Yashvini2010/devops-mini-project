@@ -2,7 +2,6 @@ from collections import Counter as Tally
 from flask import Flask, jsonify, Response
 from prometheus_client import Counter, Gauge, generate_latest, CONTENT_TYPE_LATEST
 from app import servicenow
-raise Exception('boom')
 
 app = Flask(__name__)
 
