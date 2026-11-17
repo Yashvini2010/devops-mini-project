@@ -9,7 +9,7 @@ Build and understand a complete DevOps workflow end to end:
 
 - Write code in VS Code and manage it with Git and GitHub (branches and pull requests).
 - Package the app with Docker.
-- Create the Kubernetes cluster and the monitoring stack with Terraform (infrastructure as code).
+- Create the Kubernetes cluster and the monitoring stack with Terraform (Infrastructure as Code).
 - Run an automated Jenkins pipeline that tests, builds, publishes and deploys the app.
 - Observe the running app with Prometheus and Grafana, and test how it behaves when things break.
 
