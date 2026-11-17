@@ -67,12 +67,13 @@ Build and understand a complete DevOps workflow end to end:
 
 I broke the system on purpose to see how it behaves.
 
-| Test              | What I did                                             | What I saw                                                                                            | How it recovered                                                  |
-|-------------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
-| Kill a pod        | `kubectl delete pod <name>`                            | The Pod got deleted and Kubernetes automatically recreated the deleted pod                                              | Kubernetes started a replacement while the other pod kept serving |
+| Test              | What I did                                              | What I saw                                                                                            | How it recovered                                                  |
+|-------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| Kill a pod        | `kubectl delete pod <name>`                             | The Pod got deleted and Kubernetes automatically recreated the deleted pod                            | Kubernetes started a replacement while the other pod kept serving |
 | Bad release       | Pushed code that raises an exception on startup         | The Test stage failed and the later stages were skipped, so the bad version never reached the cluster | Fixed the code on a branch, merged, and the next build was green  |
-| Scale up and down | `kubectl scale deployment incident-monitor --replicas=4` |  pod count panel changed from 2 to 4                                                                  | Scaled back to 2                                                  |
-| Fetch errors      | Set MOCK_MODE to FALSE with no credentials        cle      |  the fetch errors panel rose                                                                          | Set it back to TRUE and re-applied                                |
+| Scale up and down | `kubectl scale deployment incident-monitor --replicas=4`|  pod count panel changed from 2 to 4                                                                  | Scaled back to 2                                                  |
+| Fetch errors      | Set MOCK_MODE to FALSE with no credentials              |  the fetch errors panel rose                                                                          | Set it back to TRUE and re-applied                                |
+
 
 
 ## Author
